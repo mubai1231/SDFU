@@ -1,0 +1,32 @@
+EXPERIMENT:
+  NAME: ""
+  TAG: "ablation_ds_fed_VPTRes101_VPTRes18"
+  PROJECT: "ablation_non_iid_fed_train_pet"
+DISTILLER:
+  TYPE: "KD_ours"
+  TEACHER: "ResNet50"
+  STUDENT: "resnet110"
+FEDERATED:
+  CLIENT: "ResNet18"
+  SERVER: "ResNet101"
+  ROUND: 10
+  CLIENT_NUM: 5
+  LOCAL_EPOCH: 5
+  CLIENT_SHOTS: [1,2,16,64,128]
+  CLIENT_LR: 0.00015
+  SEED: 6
+DATASET:
+  TYPE: "oxford_pets"
+  NUM_WORKERS: 6
+  TEST:
+    BATCH_SIZE: 64
+SOLVER:
+  BATCH_SIZE: 32
+  EPOCHS: 10
+  LR: 0.00006
+  LR_DECAY_STAGES: [150, 180, 210]
+  LR_DECAY_RATE: 0.1
+  WEIGHT_DECAY: 0.0005
+  MOMENTUM: 0.9
+  TYPE: "SGD"
+  TRAINER: "ours"

@@ -1,0 +1,30 @@
+EXPERIMENT:
+  NAME: ""
+  TAG: "dh_fed_VPTRes18_VPTRes18"
+  PROJECT: "non_iid_fed_train"
+DISTILLER:
+  TYPE: "KD_ours"
+FEDERATED:
+  CLIENT: "VPTResNet18"
+  SERVER: "VPTResNet18"
+  ROUND: 10
+  CLIENT_NUM: 5
+  N_SHOT: 50
+  LOCAL_EPOCH: 5
+  NON_IID: False
+
+DATASET:
+  TYPE: "tinyimagenet"
+  NUM_WORKERS: 6
+  TEST:
+    BATCH_SIZE: 32
+SOLVER:
+  BATCH_SIZE: 32
+  EPOCHS: 10
+  LR: 0.001
+  LR_DECAY_STAGES: [150, 180, 210]
+  LR_DECAY_RATE: 0.1
+  WEIGHT_DECAY: 0.0005
+  MOMENTUM: 0.9
+  TYPE: "SGD"
+  TRAINER: "ours"
