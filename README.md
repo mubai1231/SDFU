@@ -4,7 +4,7 @@
 
 ---
 
-![1780816955540](C:\Users\12197\AppData\Roaming\Typora\typora-user-images\1780816955540.png)
+![Architecture diagram](./graph.png)
 
 ## **Running**：
 
